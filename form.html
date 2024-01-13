@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de cadastro</title>
+</head>
+
+<body>
+    <h1>Cadastre-se</h1>
+    <form>
+        <h3> 
+            Nome de usuário:
+        </h3> 
+        <input type="text" name="Nome de usuário" required>
+        
+        <br>
+
+        <h3>
+            Senha:    
+        </h3> 
+        <input type="password" name="senha" required>
+        
+        <br>
+        <hr>
+
+        <h3>
+            Sexo:    
+        </h3>
+        <input type="radio" name="sexo" value="M" required>Masculino<br>
+        <input type="radio" name="sexo" value="F" required>Feminino
+        
+        <br>
+        <hr>
+
+        <h3>
+            Selecione uma pergunta de confiança para a recuperação de seu e-mail:
+        </h3> 
+        <select name="pergunta">
+            <option value="pet">Qual o seu pet preferido?</option>
+            <option value="celular">Qual a senha do seu celular?</option>
+            <option value="e-mail">Qual o seu e-mail preferido?</option>
+        </select> 
+        <br><br>
+        
+            Resposta: <br>
+             <textarea name="resposta"></textarea>
+
+        <br>
+        <hr>
+
+        <h3>
+            Que tipo de atendimento gostaria de receber?
+        </h3>
+        <input type="text" list="Atendimento">
+        <datalist id="Atendimento">
+            <option value="IA"></option>
+            <option value="Ligação">+44 99999-9999</option>
+            <option value="Whatsapp">+44 99999-9999</option>
+            <option value="E-mail"></option>
+        </datalist>
+
+        <br>
+        <hr>
+
+        <h3>
+            Como você avalia o site?
+        </h3>
+        Péssimo<input type="range" value="3" min="1" max="5">Ótimo
+
+        <br>
+        <hr>
+
+        <h3>
+            Termos e condições:
+        </h3>
+        <input type="checkbox" name="termos" required>Eu aceito os termos e condições segundo Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>
+        <input type="checkbox" name="termos">Eu quero receber notificações e recomendações do site. <br><br>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+    
+    <hr>
+
+    <h1>Mapa do site</h1>
+    <ul>
+        <li>
+            <a href="index.html">Página inicial</a>
+        </li>
+        <li>
+            <a href="s.html">Contate-nos</a>
+        </li>
+        <li>
+            <a href="">Formulário de login</a>
+        </li>
+    </ul>
+</body>
+
+</html>
