@@ -1,4 +1,3 @@
-
 body {
     background: url(../Projeto-Site-Anna-Bella/Arquivos/fundo.png);
     font-family: Arial, Helvetica, sans-serif;
@@ -12,6 +11,7 @@ main {
 }
 
 a {
+    color: #4b566a;
     text-decoration: none;
 }
 
@@ -25,15 +25,20 @@ footer {
 div ul {
     display: flex;
     list-style: none;
+    padding: 0;
+}
+
+a:hover {
+    color: aqua;
 }
 
 .titulo {
-    font: bold 25px Arial, Helvetica, sans-serif ;
+    font: bold 25px Arial, Helvetica, sans-serif;
     color: #6E7654;
 }
 
 .imgCp {
-    height: 531,56px;
+    height: 531, 56px;
     width: 800px;
     border: 15px solid #858C6E;
     margin: 10px;
@@ -50,7 +55,7 @@ div ul {
     text-align: left;
 }
 
-#navegador ul{
+#navegador ul {
     display: flex;
     font-weight: bold;
 }
@@ -60,7 +65,3 @@ div ul {
     height: 517.32px;
 }
 
-
-a:hover {
-    color: aqua;
-}
