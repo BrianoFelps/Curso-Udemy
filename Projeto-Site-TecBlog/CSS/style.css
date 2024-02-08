@@ -119,7 +119,12 @@ footer {
     float: right;
 }
 
-
+/* Seleção de item do menu com cor permanente */
+#menu #home .itemmenu,
+#menu #cel .itemmenu {
+    background-color: #FFF;
+    color: #f7b600;
+}
 /* 
     Formatação menu
 */
