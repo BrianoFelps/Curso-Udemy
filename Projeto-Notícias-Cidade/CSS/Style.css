@@ -16,6 +16,13 @@ ul a {
     text-decoration: none;
 }
 
+h3 {
+    text-transform: uppercase;
+    display: inline;
+    font-size: 0.95em;
+    padding: 3px;
+}
+
 #container {
     width: 800px;
     margin: 0 auto;
@@ -54,7 +61,7 @@ ul a {
     color: #66101d;
 }
 
-#containerTopo #atual, #containerTopo #atual a {
+#container #atual, #container #atual a {
     background-color: #de003e;
     cursor: text;
 }
@@ -66,25 +73,144 @@ ul a {
     background: #f5f5f5;
 }
 
+#lateral {
+    float: left;
+    margin: 0 0 20px -800px;
+    width: 200px;
+}
+
 #primario {
-    background: #de003e;
     float: left;
     margin: 0 0 20px 215px;
     width: 285px;
 }
 
+#duas-colunas #primario {
+    width: 585px;
+}
+
+#uma-coluna #primario {
+    margin: 0 0 20px 0px;
+    width: 800px;
+}
+
 #secundario {
-    background: #66101d;
     float: left;
     margin: 0 0 20px 15px;
     width: 285px;
 }
 
-#lateral {
-    background: #b10333;
+/* Caixa */
+
+h2 {
+    font-size: 1em;
+    color: #fff;
+    background: #294c71;
+    padding: 5px;
+}
+
+.caixa {
+    margin: 10px 0;
+    padding: 5px 0;
+    background: #f3f3f3 url(../Res/Img/imagens/fundo-caixa.png);
+}
+
+.conteudoCaixa {
+    margin-top: 5px;
+    padding: 5px;
+    background: #fff;
+}
+
+/* Barra lateral */
+
+#lateral ul a {
+    color: #000;
+    font-size: 1em;
+    padding: 3px;
+    display: block;
+    line-height: 30px;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+#lateral ul a:hover {
+    color: #a1a1a1;
+    background: #f9f9f9 url(../Res/Img/imagens/marcador.png) no-repeat left center;
+    padding-left: 20px;
+    transition: 0.1s;
+}
+
+/* Área principal */
+
+#conteudo a {
+    color: #de003e;
+}
+
+.imgPrincipal {
+    border: 3px solid #dfdfdf;
+    width: 98%;
+}
+
+.destaque h3 {
+    background: #de003e;
+    color: #fff;
+}
+
+.entrevista h3 {
+    background: #870529;
+}
+
+/* Formulários */
+
+label {
+    display: block;
+    cursor: pointer;
+}
+
+input{
+    padding: 5px;
+    width: 150px;
+    font-size: 0.9em;
+    background: #fff;
+}
+
+input[type="submit"]{
+    width: 80px;
+    color: #fff;
+    background-color: #b10333;
+    border: 2px solid #870529;
+    cursor: pointer;
+}
+
+input[type="text"]{
+    border: none;
+}
+
+#listaNoticias li {
+    padding: 4px;
+    border-bottom: 1px solid #ccc;
+    height: 65px;
+}
+
+#listaNoticias li:hover {
+    background: #eee;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#listaNoticias li a img{
     float: left;
-    margin: 0 0 20px -800px;
-    width: 200px;
+    margin: 5px;
+}
+
+#listaNoticias li a p{
+    font-size: 0.65em;
+    color: #000;
+}
+
+#listaNoticias li a h3{
+    font-size: 0.8em;
+    padding: 0;
+    color: #3e7ab9;
 }
 
 /* Footer */
