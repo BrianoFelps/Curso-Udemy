@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background: #fff url(../Res/bg.png);
+    margin: 15px;
+}
+
+textarea:focus, input:focus, select:focus, input[type="button"] {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+h2 {
+    color: #7d7640;
+    font-size: 1.3em;
+    padding: 5px 0;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#container {
+    background: #ede9cc url(../Res/bg-container.png) top center repeat-y;
+    margin: 0 auto;
+    min-width: 800px;
+    max-width: 1500px;
+}
+
+#containerSuperior {
+    position: relative;
+    background: #dbcd87;
+    height: 15.4em;
+    min-height: 250px;
+}
+
+#logoArea {
+    position: absolute;
+    background: url(../Res/topo-imagem-principal2.png) no-repeat;
+    width: 100%;
+    height: 250px;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#logoArea a {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    width: 151px;
+    height: 66px;
+}
+
+#menuArea {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(../Res/topo-imagem-lateral.png) no-repeat;
+    z-index: 1;
+    width: 600px;
+    height: 250px;
+}
+
+#conteudoMenu {
+    margin-left: 90px;
+    margin-right: 15px;
+    padding-top: 15px;
+}
+
+#menuHorizontal {
+    border-bottom: 1px solid #b5ab56;
+    border-top: 1px solid #b5ab56;
+    padding: 5px 0;
+    font-size: 0.9em;
+    color: #8b8448;
+}
+
+#menuHorizontal ul li{
+    display: flex;
+    float: left;
+    line-height: 2em;
+}
+
+#menuHorizontal input[type="button"]{
+    text-transform: uppercase;
+    background: #a29750;
+    color: #fff5b0;
+    padding: 7px 10px;
+    float: right;
+}
+
+/* Navegação vertical topo */
+
+#menuVerticalTopo {
+    margin-top: 15px;
+}
+
+#menuVerticalTopo img {
+    width: 226px;
+    height: 164px;
+    float: right;
+}
+
+#menuVerticalTopo ul {
+    float: left;
+}
+
+#menuVerticalTopo ul a{
+    text-transform: uppercase;
+    font-size: 1em;
+    padding: 5px;
+    color: #6e672c;
+    text-decoration: none;
+    line-height: 30px;
+}
+
+#menuVerticalTopo ul a:hover{
+    background: #fdf6be;
+    transition: 0.3s;
+}
+
+/* Áreas de conteúdo */
+#areaPrincipal {
+    background: url(../Res/bg-area-principal.png) top left repeat-x;
+    float: left;
+    width: 50%;
+    padding: 15px 0;
+}
+
+#areaLateral {
+    background: url(../Res/bg-area-lateral.png) top left repeat-x;
+    float: right;
+    width: 50%;
+    padding: 20px 0;
+}
+
+.conteudo {
+    margin: 0 auto;
+    width: 90%;
+}
+
+footer {
+    clear: both;
+    padding: 16px;
+    background: #fff url(../Res/bg-rodape.png) repeat-x top;
+    color: #7d7640;
+}
+
+/* Área lateral */
+#beneficios li {
+    padding: 8px;
+    border-bottom: 1px solid #f3efcb;
+    height: 6em;
+}
+
+#beneficios li:hover {
+    background: #f6f3d6;
+    cursor: pointer;
+}
+
+#beneficios li a p {
+    color: #000;
+    font-size: 0.8em;
+}
+
+#beneficios li a h3 {
+    font-size: 1.1em;
+    color: #615b2d;
+    padding: 5px 0;
+    background: url(../Res/ornamento.png) no-repeat center right;
+}
+
+#beneficios li a img {
+    float: left;
+    margin-right: 8px;
+}
