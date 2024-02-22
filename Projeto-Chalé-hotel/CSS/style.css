@@ -169,6 +169,7 @@ footer {
 #beneficios li:hover {
     background: #f6f3d6;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 #beneficios li a p {
