@@ -1,0 +1,74 @@
+html, body {
+    margin: 0;
+    font: 16px "Lato", sans-serif;
+    color: #777;
+    /* O height também tem importancia ao parallax */
+    height: 100%;
+}
+
+.conteudo {
+    color: #777;
+    background: white;
+    text-align: justify;
+    padding: 50px 80px;
+}
+
+h3 {
+    text-transform: uppercase;
+    color: #111;
+    text-align: center;
+}
+
+/* Parallax effect */
+.imagem1, .imagem2, .imagem3, .imagem4, .imagem5, .imagem6 {
+    position: relative;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.8;
+}
+
+.imagem1{
+    background-image: url(../Img/imagem1.jpg);
+}
+
+.imagem2{
+    background-image: url(../Img/imagem2.jpg);
+}
+
+.imagem3{
+    background-image: url(../Img/imagem3.jpg);
+}
+
+.imagem4{
+    background-image: url(../Img/imagem4.jpg);
+}
+
+.imagem5{
+    background-image: url(../Img/imagem5.jpg);
+}
+
+.imagem6 {
+    background-image: url(../Img/imagem6.jpg);
+}
+
+/* Formatações de texto */
+
+.conteudoTitulo {
+    position: absolute;
+    left: 0;
+    top: 45%;
+    width: 100%;
+    text-align: center;
+}
+
+.conteudoTitulo .titulo {
+    color: white;
+    background-color: #111;
+    font-size: 2em;
+    letter-spacing: 5px;
+    padding: 18px;
+    text-transform: uppercase;
+}
