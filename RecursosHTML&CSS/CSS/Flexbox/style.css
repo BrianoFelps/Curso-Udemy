@@ -1,0 +1,45 @@
+#container{
+    background: #dcdcdc;
+    height: 600px;
+}
+
+#itens1{
+    width: 100%;
+    display: flex;
+    margin-bottom: 30px;
+
+        /* row (padrão), row-reverse, column, column-reverse */
+    /* Altera a disposição de conteúdo, e com o reverse sua posição e sequência */
+    flex-direction: row;
+
+    /* nowrap (padrão), wrap, wrap-reverse */
+    /* Disposição de quebra de linha das propriedades filhas em falta de espaço
+    , a padrão é não quebrar, mas espremer os itens (o reverse muda se aparece 
+    embaixo ou em cima*/
+    flex-wrap: wrap;
+
+    /* flex-start (padrão), flex-end, center, space-between (grudado
+    nas laterais), space-around(não grudado nas laterais) */
+    /* Usada para formatar o elemento em seu eixo X */
+    justify-content: center;
+
+    /* stretch (padrão), center, flex-start, flex-end, baseline */
+    /* Usada para formatar o elemento em seu eixo Y. O padrão estica o 
+    componente o máximo de cima a baixo, e o baseline alinha os outros 
+    itens filhos com base na posição do texto. */
+    align-items: baseline;
+}
+
+#itens2{
+    /* Container usado para mostrar a edição direta dos itens com propriedades
+    flex */
+    display: flex;
+}
+
+.item{
+    width: 100px;
+    height: 100px;
+    background: white;
+    border: 1px solid gray;
+    margin: 10px;
+}

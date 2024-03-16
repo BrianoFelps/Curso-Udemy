@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    border: 1px solid black;
+    background: blue;
+}
+
+article {
+    border: 2px solid rgb(192, 0, 0);
+    background: rgb(143, 143, 187);
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+section {
+    border: 1px solid rgb(0, 132, 255);
+    background: rgb(185, 82, 82);
+}
+
+header {
+    border: 1px solid rgb(0, 255, 13);
+    background: rgb(89, 103, 107);
+}
+
+nav {
+    border: 1px solid rgb(76, 97, 77);
+    background: rgb(255, 0, 200);
+}
+
+footer {
+    background: #ccc;
+}
