@@ -34,6 +34,8 @@
     /* Container usado para mostrar a edição direta dos itens com propriedades
     flex */
     display: flex;
+    /* Padrão, aqui pode definir a todos os itens */
+    flex-grow:0;
 }
 
 .item{
@@ -42,4 +44,59 @@
     background: white;
     border: 1px solid gray;
     margin: 10px;
+}
+
+.grow1{
+    /* Essa propriedade alterna a proporção que o item vai ocupar a tela com 
+    o máximo de espaço disponível, sendo possível fazer um layout responsivo */
+    flex-grow: 1;
+}
+
+.grow2{
+    /* Quanto maior o número, maior o ocupamento de espaço, esse, por exemplo,
+    ocupa o dobro daquele*/
+    flex-grow: 2;
+}
+
+/* O shrink faz o processo contrário do grow, de modo a diminuir o tamanho de 
+um item quando se diminui a resolução, proporcionalmente. Quanto maior o valor
+menor o item*/
+.shrink1{
+    flex-shrink: 5;
+}
+
+.shrink2{
+    flex-shrink: 10;
+}
+
+/* O flex-basis funciona como a propriedade width, definindo a largura inicial
+do item. */
+.basis{
+    flex-basis: 300px;
+}
+
+/* Por padrão a ordem é 0, essa propriedade influencia a sequência que os itens 
+são dispostos na tela */
+.ordem1{
+    order: 1;
+}
+
+.ordem2{
+    order: 2;
+}
+
+.ordem3{
+    order: 3;
+}
+
+.ordem4{
+    order: 4;
+}
+
+.ordem5{
+    order: 5;
+}
+
+.ordem{
+    order: -1;
 }
