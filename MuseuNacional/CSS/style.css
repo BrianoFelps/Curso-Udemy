@@ -1,0 +1,181 @@
+body{
+    background: #f4f2ec url(../Assets/fundo.png) repeat-x;
+    font: 12px "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+}
+
+#container{
+    position: relative;
+    width: 1080px;
+    margin: 0 auto;
+}
+
+a:link, a:active, a:visited{
+    color: #af670a;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #227115;
+}
+/* Logo */
+header{
+    padding: 15px 0;
+    height: 55px;
+
+    position: relative;
+}
+
+#logo img{
+    position: absolute;
+    top: 40%;
+}
+
+/* Barra navegação */
+nav ul{
+    list-style: none;
+    margin: 20px;
+    float: right;
+}
+
+nav ul li{
+    float: left;
+}
+
+nav ul li a:link{
+    display: block;
+    margin-right: 25px;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover{
+    border-bottom: 1px solid #535858;
+}
+
+/* Principal */
+#conteudo{
+    width: 710px;
+    float: left;
+    padding-bottom:11px;
+    margin-bottom: 20px;
+}
+
+aside{
+    width: 350px;
+    float: right;
+    background-color: #ebe7dd;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+#visita{
+    background: #cdc8b1;
+    padding: 10px 27px 27px 27px;
+    margin-top: 10px;
+    padding-bottom: 50px;
+}
+
+#galeria a{
+    display: block;
+    background: url(../Assets/fundo-foto.png) no-repeat;
+    float: left;
+    padding: 15px 15px 18px 15px;
+    margin: 10px 0 0 32px;
+}
+
+#galeria img {
+    margin: 3px 0 0 2px;
+}
+
+#galeria h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#video{
+    float: left;
+    width: 310px;
+    margin-left: 25px;   
+}
+
+#mapa{
+    float: left;
+    width: 310px;
+    margin-left: 37px;   
+}
+
+#exposicoes{
+    float: left;
+    width: 310px;
+    margin: 15px 0 0 25px;
+}
+
+#historia{
+    float: left;
+    width: 310px; 
+    margin: 15px 0 0 37px;
+}
+
+main h1{
+    color: #227115;
+    font-size: 1.8em;
+    margin: 15px 0;
+    text-transform: uppercase;
+}
+
+h2{
+    color: #86521a;
+    text-transform: uppercase;
+    padding-bottom: 3px;
+    margin-bottom: 0;
+}
+
+/* Formularios */
+input{
+    height: 20px;
+    width: 80px;
+    background: white;
+    border: none;
+    font-size: 1em;
+}
+
+.campo{
+    border: 1px solid #ada484;
+}
+
+.botao{
+    background: #9b9271;
+    color: white;
+    width: 100%;
+    height: 40px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+fieldset{
+    border: none;  
+}
+
+fieldset legend {
+    display: none;
+}
+
+input[type="number"]{
+    width: 40px;
+}
+
+/* Rodapé */
+footer{
+    clear: both;
+    padding: 20px 0 30px 0;
+    text-align: center;
+    background: url(../Assets/fundo-rodape.png) no-repeat center top;
+    /* A margem superior pode não funcionar pelo efeito margin collapse, por conta
+    do clear both */
+    /* margin-top: 20px; */
+}
+
+footer>p a{
+    padding: 2px 10px;
+}
