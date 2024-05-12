@@ -126,6 +126,20 @@ footer div.col-md-4 ul li{
     border: 2px solid white;
 }
 
+#carousel-spotify .carousel-control-prev{
+    justify-content: start;
+}
+
+#carousel-spotify .carousel-control-next{
+    justify-content: end;
+}
+
+#carousel-spotify .carousel-control-next-icon,
+#carousel-spotify .carousel-control-prev-icon  {
+    width: 40px;
+    height: 40px;
+}
+
 /* Extra small devices (portrait phones, less than 576px*/
 @media (max-width: 575.98px) { 
     .btn-custom{
