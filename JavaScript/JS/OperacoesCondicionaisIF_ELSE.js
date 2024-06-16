@@ -30,8 +30,20 @@ let MediaDoAluno = 84
 
 document.write("<h1>APROVAÇÃO DE ALUNOS:</h1>")
 if (faltasDoAluno <= faltasPermitidas && MediaDoAluno >= MediaParaAprovação){
-    document.write("ALUNO APROVADO!!!!!!!!!!!!!!!!!!!!!!!!!! <br><br> MÉDIA NECESSÁRIA: " + MediaParaAprovação + "<br>" + "MÉDIA OBTIDA: ", MediaDoAluno, "<br> MÁXIMO DE FALTAS PERMITIDAS: ", faltasPermitidas, " <br> FALTAS DO ALUNO: ", faltasDoAluno)
+    document.write(
+        "ALUNO APROVADO!!!!!!!!!!!!!!!!!!!!!!!!!! <br><br> MÉDIA NECESSÁRIA: " + MediaParaAprovação + "<br>" + "MÉDIA OBTIDA: ", MediaDoAluno, "<br> MÁXIMO DE FALTAS PERMITIDAS: ", faltasPermitidas, " <br> FALTAS DO ALUNO: ", faltasDoAluno
+    )
 } else {
-    document.write("ALUNO REPROVADO!!!!!!!!!!!!!!!!!!!!!!!!!! <br><br> MÉDIA NECESSÁRIA: " + MediaParaAprovação + "<br>" + "MÉDIA OBTIDA: ", MediaDoAluno, "<br> MÁXIMO DE FALTAS PERMITIDAS: ", faltasPermitidas, " <br> FALTAS DO ALUNO: ", faltasDoAluno)
+    document.write(
+        "ALUNO REPROVADO!!!!!!!!!!!!!!!!!!!!!!!!!! <br><br> MÉDIA NECESSÁRIA: " + MediaParaAprovação + "<br>" + "MÉDIA OBTIDA: ", MediaDoAluno, "<br> MÁXIMO DE FALTAS PERMITIDAS: ", faltasPermitidas, " <br> FALTAS DO ALUNO: ", faltasDoAluno
+    )
 }
 
+
+// OPERADOR TERNÁRIO
+
+// var resultado = <condição> ? <verdadeiro> : <falso>
+
+var resultado = faltasDoAluno <= faltasPermitidas && MediaDoAluno >= MediaParaAprovação ? "ALUNO APROVADO!!!!!!!!!!!!!!!!!!!!!!!!!!" : "ALUNO REPROVADO!!!!!!!!!!!!!!!!!!!!!!!!!!";
+
+console.log(`Dados do resultado via operador ternário: ` + resultado)
