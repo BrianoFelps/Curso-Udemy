@@ -7,8 +7,8 @@ console.log(Num1)
 Num2 = parseInt(Num2)
 console.log(Num2)
 
-Num1 = Num1.toString()
-console.log(Num1)
+// Num1 = Num1.toString()
+// console.log(Num1)
 
 /* Sem conversão de tipo dos valores, apenas ocorre a
 concatenação. Pelo contrário, os números são somados */
