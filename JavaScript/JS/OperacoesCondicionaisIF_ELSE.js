@@ -44,6 +44,6 @@ if (faltasDoAluno <= faltasPermitidas && MediaDoAluno >= MediaParaAprovação){
 
 // var resultado = <condição> ? <verdadeiro> : <falso>
 
-var resultado = faltasDoAluno <= faltasPermitidas && MediaDoAluno >= MediaParaAprovação ? "ALUNO APROVADO!!!!!!!!!!!!!!!!!!!!!!!!!!" : "ALUNO REPROVADO!!!!!!!!!!!!!!!!!!!!!!!!!!";
+var resultado = (faltasDoAluno <= faltasPermitidas && MediaDoAluno >= MediaParaAprovação) ? "ALUNO APROVADO!!!!!!!!!!!!!!!!!!!!!!!!!!" : "ALUNO REPROVADO!!!!!!!!!!!!!!!!!!!!!!!!!!";
 
 console.log(`Dados do resultado via operador ternário: ` + resultado)

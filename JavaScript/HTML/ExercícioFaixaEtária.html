@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Identificação de faixa etária</title>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        const idade = prompt("Digite aqui a sua idade e forneceremos sua faixa etária:")
+
+        if(idade >= 0 && idade < 15)
+            alert("Você é uma criança!")
+        else if (idade >= 15 && idade < 30)
+            alert("Você é um jovem!")
+        else if (idade >= 30 && idade < 60)
+            alert("Você é um adulto!")
+        else if (idade >= 60 && idade < 130)
+            alert("Você é um idoso!")
+        else
+            alert("Você não é humano.👻")
+    </script>
+</html>
