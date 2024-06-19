@@ -3,7 +3,7 @@ var a = "abóbora";
 // Funciona como o if/else, com sintaxe mais simples, de forma mais restrita, com comparações de idênticos (===)
 // O parâmetro pega o valor usado como parâmetro de comparação aos case's
 switch (a){
-    // O case pode ser usado várias vezes. O valor ao lado da palavra reservada é o que vai ser comparado ao parâmetro;
+    // O case pode ser usado várias vezes. O valor ao lado da palavra reservada é o que vai ser comparado ao parâmetro (0 === a);
     case 0: 
         document.write("Banana");
         // O break pode ser omitido, mas dessa forma o código rodaria todos os cases até encontrar um break.
