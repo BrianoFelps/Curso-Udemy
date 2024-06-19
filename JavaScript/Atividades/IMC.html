@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cálculo do índice de massa corporal</title>
+    </head>
+    <body>
+        <form action="">
+            <label>
+                <!-- Digite o nome:
+                <input type="text" name="inputNome" id="inputNome">
+
+                Digite a sua idade:
+                <input type="number" name="inputIdade" id="inputIdade">
+
+                Digite a sua altura em cm:
+                <input type="number" name="inputAltura" id="inputAltura">
+
+                Digite o seu peso em kg:
+                <input type="number" name="inputPeso" id="inputPeso">
+                
+                <button type="submit"></button> -->
+
+            </label>
+        </form>
+    </body>
+    <script>
+        var nome = prompt("Digite seu nome:")
+        var idade = prompt("Digite sua idade:");
+        var altura = prompt("Digite a sua altura em cm:")
+        var peso = prompt("Digite seu peso em kg:")
+
+        altura /= 100;
+
+        var imc = (peso / altura ** 2);
+        let classe = null;
+        let color = ""
+
+        if (imc < 16) {
+            classe = `Baixo peso muito grave!`
+            color = "red";
+        } else if (imc > 16 && imc < 17){
+            classe = `Baixo peso grave!`
+            color = "red";
+        } else if (imc > 17 && imc < 18.5){
+            classe = `Baixo peso.`
+            color = "gray";
+        } else if (imc > 18.49 && imc < 25){
+            classe = `Peso normal!`
+            color = "green";
+        } else if(imc > 25 && imc < 30){
+            classe = `Sobrepeso.`
+            color = "gray";
+        } else if(imc > 30 && imc < 35){
+            classe = `Obesidade grau 1!`
+            color = "red";
+        } else if(imc > 35 && imc < 40){
+            classe = `Obesidade grau 2!`
+            color = "red";
+        } else if(imc > 40){
+            classe = `Obesidade grau 3!`
+            color = "red";
+        }
+
+        if(classe === null){
+            alert("Digite os dados!")
+        } else {
+            document.write("<h1 style='color:" + color +"'>" + nome + " possui índice de massa corporal igual a " + imc + ", sendo classificado como: <br> " + classe +"</h1>")
+        }
+
+
+    </script>
+</html>
