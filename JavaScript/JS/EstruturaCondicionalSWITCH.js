@@ -19,3 +19,10 @@ switch (a){
         document.write("<br> Default: Não é uma fruta");
         break;
 }
+
+/* 
+Adendo: tu podes ver um exemplo bonito de utilização do
+switch no teu github, no repo "SistemaAutomotiva1", 
+SistemaAutomotiva1/src/main/java/com/mycompany/visao/empresa/ListEmpresa.java, 
+linha 260.
+*/
