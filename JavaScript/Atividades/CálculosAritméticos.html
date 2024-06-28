@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cálculos aritméticos</title>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        var num1 = prompt("Digite o primeiro número")
+        var op = prompt("Digite a operação")
+        var num2 = prompt("Digite o segundo número")
+
+        const SomarOuSubtrair = (num1, num2, operacao) =>{
+            num1 =  parseFloat(num1);
+            num2 = parseFloat(num2)
+            
+            var resultado = 0;
+
+            if(operacao == 'soma')
+                resultado = num1 + num2
+            else if (operacao == 'subtracao'){
+                resultado = num1 - num2
+            }
+            return resultado
+        }
+        switch(op){
+            case 'soma':
+                document.write(`O resultado de ${num1} + ${num2} é: ${SomarOuSubtrair(num1, num2, op)}`);
+                break;
+
+            default:
+                document.write(`O resultado de ${num1} - ${num2} é: ${SomarOuSubtrair(num1, num2, op)}`);   
+                break;
+        }
+
+
+    </script>
+</html>
