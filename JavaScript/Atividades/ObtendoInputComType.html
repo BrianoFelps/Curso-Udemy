@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Obtendo input pelo type correspondente</title>
+    </head>
+    <body>
+        <input type="text" id="Digitador" onkeypress="FocoComBaseNotexto()" placeholder="Digite um caractere aqui">
+        <br><br> <hr>
+        <label>
+            Letras:
+            <input type="text" name="letra" id="letra" disabled>
+        </label>
+        <label>
+            Números:
+            <input type="number" name="numero" id="numero" disabled>
+        </label>
+    </body>
+    <script>
+        const FocoComBaseNotexto = () =>{
+            const elementoD = document.getElementById("Digitador");
+            const elementoL = document.getElementById("letra");
+            const elementoN = document.getElementById("numero")
+            
+            const caracteres = elementoD.value;
+
+            caracteres.trim();
+
+            elementoD.value = '';
+
+            switch(caracteres){
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    elementoN.value = caracteres;
+                    break;
+                default:
+                    elementoL.value = caracteres
+
+            }
+
+        }
+    </script>
+</html>
