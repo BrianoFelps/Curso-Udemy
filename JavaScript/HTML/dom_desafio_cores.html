@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Estilos manipulados</title>
+    </head>
+    <body>
+        <button id="vermelho" onclick="mudarACorDaDiv('red')">Vermelho</button>
+        <button id="azul" onclick="mudarACorDaDiv('blue')">Azul</button>
+        <button id="verde" onclick="mudarACorDaDiv('green')">Verde</button>
+
+        <br><br>
+
+        <div id="DivMudada" style="width: 300px; height: 300px; border: 1px solid black; transition: 1s;">
+
+        </div>
+    </body>
+
+    <script>
+        const div = document.getElementById("DivMudada")
+
+        console.log(div);
+
+        const mudarACorDaDiv = (cor) => {
+            div.style.backgroundColor = cor;
+        }
+
+    </script>
+</html>
