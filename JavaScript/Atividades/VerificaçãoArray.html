@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Verificação Array</title>
+    </head>
+    <body>
+        <input type="text" id="InputNomeElemento">
+        <button onclick="Adicionar()">Adicionar</button>
+        <button onclick="Ordenar()">Ordenar</button>
+    </body>
+    <script>
+        var objetos = ['Cadeira', 'Impressora', 'Garfo'];
+
+        const InputNomeElemento = document.getElementById("InputNomeElemento");
+
+        const Adicionar = () =>{
+            const ValorInputNomeElemento = InputNomeElemento.value;
+            if(ValorInputNomeElemento != ''){
+                if(objetos.indexOf(ValorInputNomeElemento) !== -1){
+                    alert("Objeto já foi adicionado!")
+                } else {
+                    objetos.push(ValorInputNomeElemento)
+                    console.log(`Array: ${objetos}`)
+                    InputNomeElemento.value = '';
+                }
+            } else {
+                alert("Informe um valor válido!")
+            }
+        }
+
+        const Ordenar = () =>{
+            objetos.sort()
+            console.log(objetos)
+        }
+    </script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Manipulando inputText</title>
+    </head>
+    <body>
+        <input type="text" onfocus="input.style.backgroundColor = 'gray'" onBlur="onBlurMudarCor()" style="width: 150px; height: 20px;">
+    </body>
+    <script>
+        var input = document.querySelector("input[type='text']");
+
+        const onBlurMudarCor = () =>{
+
+            if(input.value.length < 3){
+                input.style.backgroundColor = 'red';
+            } else {
+                input.style.backgroundColor = 'green';
+            }
+        
+        }
+
+        console.log(input)
+    </script>
+</html>
