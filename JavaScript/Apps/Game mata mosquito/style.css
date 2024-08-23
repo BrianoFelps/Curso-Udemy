@@ -1,6 +1,8 @@
 html{
     width: 100%;
     height: 100%;
+
+    cursor: url(imagens/mata_mosca.png) 30 30, auto;
 }
 
 body{
@@ -8,5 +10,72 @@ body{
     height: 100%;
 
     background: url(imagens/bg.jpg) no-repeat center center;
-    background-size: 100%;
+    background-size: cover;
+}
+
+.mosquito1{
+    width: 50px;
+    height: 50px;
+}
+
+.mosquito2{
+    width: 75px;
+    height: 75px;
+}
+
+.mosquito3{
+    width: 60px;
+    height: 60px;
+}
+
+.ladoA{
+    transform: rotateY(180deg)
+    /* transform: scaleX(1) */
+}
+
+.ladoB{
+    transform: rotateY(0)
+      /* transform: scaleX(-1) */
+}
+
+.container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container select{
+    outline: none;
+    border: none;
+    border-radius: 10px;
+
+    padding: 7px 0;
+
+    font-size: 20px;
+
+    width: 38%;
+}
+
+#PainelLateral{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+
+    width: 30%;
+    padding: 10px;
+
+    border-radius: 10px;
+    border-top: 1px solid white;
+
+    background: rgba(255, 255, 255, .5);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#Mosquito:hover{
+    box-shadow: 0 0 10 white;
 }

@@ -11,37 +11,23 @@
 
         <script src="jogo.js"></script>
     </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col d-flex justify-content-center">
-                    <img src="imagens/game.png" alt="">
-                </div>
+    <body onresize="ajustarTamanhoTela()">
+        <div id="PainelLateral">
+            <div id="Vidas">
+                <img src="./imagens/coracao_cheio.png" alt="Vida 1 cheia" id="coracao1">
+                <img src="./imagens/coracao_cheio.png" alt="Vida 2 cheia" id="coracao2">
+                <img src="./imagens/coracao_cheio.png" alt="Vida 3 cheia" id="coracao3">
+            </div>
+            <div style="font-size: 20px; font-weight: bold; color: black">
+                Tempo restante: <span id="TempoRestante"></span>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col d-flex justify-content-center">
-                    <select name="niveis" id="nivel">
-                        <option value="facil">Fácil</option>
-                        <option value="normal">Normal</option>
-                        <option value="difícil">Difícil</option>
-                        <option value="infernal">Infernal</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col d-flex justify-content-center">
-                    <button class="btn btn-success btn-lg" onclick="">Iniciar jogo</button>
-                </div>
-            </div>
-        </div>
-
-
         <script>
+            document.getElementById("TempoRestante").innerHTML = tempo;
 
+            var criamosquito = setInterval(
+                GerarMosquitoAleatoriamente, intervaloDificuldade
+            )
         </script>
     </body>
 </html>
