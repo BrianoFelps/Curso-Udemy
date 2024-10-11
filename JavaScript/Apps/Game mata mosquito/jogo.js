@@ -92,7 +92,7 @@ function GerarMosquitoAleatoriamente(){
     mosquito.style.position = 'absolute';
     mosquito.style.left = numComBaseNaLargura + 'px';
     mosquito.style.top = numComBaseNaAltura + 'px';
-    mosquito.onclick = function(){
+    mosquito.onmousedown = function(){
         this.remove()
     }
     
