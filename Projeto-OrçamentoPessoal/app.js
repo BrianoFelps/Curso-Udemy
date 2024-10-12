@@ -12,6 +12,8 @@ class Despesa{
         let atributos = document.getElementsByClassName("form-control");
         let valoresArray = [];
         let variavelNobj = parseInt(localStorage.getItem('variavelNobj') || '0', 10)
+        const modalSucess = new Modal('text-success', 'btn-success', 'Despesa registrada!', 'Despesa registrada com sucesso!');
+        const modalDanger = new Modal('text-danger', 'btn-danger', 'Erro no registro!', 'Preencha todos os campos antes de continuar!')
 
         for (let i = 0; i < atributos.length; i++) {
             var valor = atributos[i].value;
@@ -20,19 +22,16 @@ class Despesa{
                 valoresArray.push(valor)
                 
                 //Categorizar modal
-                const modal = new Modal('text-success', 'btn-success', 'Despesa registrada!', 'Despesa registrada com sucesso!');
 
-                console.log(modal)
-
-                modal.categorizarModal(modal)
+                modalSucess.categorizarModal(modalSucess)
                 
                 $('#modalRegistro').modal('show');
 
                 // atributos[i].value = '';
             } else{
-                $('#modalRegistro').modal('show');
+                modalDanger.categorizarModal(modalDanger)
 
-                const modal = new Modal();
+                $('#modalRegistro').modal('show')
 
                 return; // Mesma coisa que break
             }
@@ -64,10 +63,26 @@ class Modal {
         const divTitulo = document.getElementById('modalH');
         const divDescricao = document.getElementById('modal-body');
 
-        header.classList.add(modal.classeTexto)
-        botao.classList.add(modal.classeBotao)
-        divTitulo.textContent = modal.titulo;
-        divDescricao.textContent = modal.descricao;
+        if(header && botao){
+            // Verificar se já existem classes definidas anteriormente
+            if (header.classList.length > 4) {
+                // Substituir a classe existente no header pela nova
+                header.classList.replace(header.classList.item(4), modal.classeTexto);
+            } else {
+                // Caso não exista nenhuma classe, apenas adicionar
+                header.classList.add(modal.classeTexto);
+            }
+
+            // Mesma lógica para o botão
+            if (botao.classList.length > 1) {
+                botao.classList.replace(botao.classList.item(1), modal.classeBotao);
+            } else {
+                botao.classList.add(modal.classeBotao);
+            }
+        }
+
+        divTitulo.textContent = modal.titulo
+        divDescricao.textContent = modal.descricao
     }
 }
 
