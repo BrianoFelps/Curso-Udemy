@@ -8,38 +8,44 @@ class Despesa{
         this.valor = valor;
     }
 
+    recuperarDespesasDigitadas (){
+        let atributos = document.getElementsByClassName("form-control");
+        const valoresArray = [];
+    
+        for (let i = 0; i < atributos.length; i++) {
+            const valor = atributos[i].value;
+            valoresArray.push(valor)
+        }
+        // console.log(`Valores array: ${valoresArray}`)
+        return valoresArray;
+    }
+
     consultarDespesa() {
         let atributos = document.getElementsByClassName("form-control");
-        let valoresArray = [];
+        let valoresInput = this.recuperarDespesasDigitadas(false);
         let variavelNobj = parseInt(localStorage.getItem('variavelNobj') || '0', 10)
-        const modalSucess = new Modal('text-success', 'btn-success', 'Despesa registrada!', 'Despesa registrada com sucesso!');
+
+        const modalSuccess = new Modal('text-success', 'btn-success', 'Despesa registrada!', 'Despesa registrada com sucesso!');
         const modalDanger = new Modal('text-danger', 'btn-danger', 'Erro no registro!', 'Preencha todos os campos antes de continuar!')
 
         for (let i = 0; i < atributos.length; i++) {
-            var valor = atributos[i].value;
-            
-            if(valor.trim()){
-                valoresArray.push(valor)
+            if (valoresInput[i] == undefined || valoresInput[i] == ''){
                 
                 //Categorizar modal
-
-                modalSucess.categorizarModal(modalSucess)
-                
-                $('#modalRegistro').modal('show');
-
-                // atributos[i].value = '';
-            } else{
                 modalDanger.categorizarModal(modalDanger)
-
                 $('#modalRegistro').modal('show')
-
                 return; // Mesma coisa que break
+
+            } else if (valoresInput[i].trim()){
+
+                modalSuccess.categorizarModal(modalSuccess)
+                $('#modalRegistro').modal('show')
+                atributos[i].value = ''
+
             }
         }
 
-        console.log(...valoresArray)
-
-        const despesas = new Despesa(...valoresArray)
+        const despesas = new Despesa(...valoresInput)
 
         registrarDespesa(despesas, variavelNobj)
 
@@ -47,6 +53,58 @@ class Despesa{
         localStorage.setItem('variavelNobj', variavelNobj.toString())
         console.log(variavelNobj);
     }
+
+    carregarListaDespesas(totalDespesas = [], filtro = false) {
+
+        if(totalDespesas.length == 0 && filtro !== true){
+            totalDespesas = recuperarTodasDespesas()
+        }
+    
+        const tbody = document.getElementById('lista-despesas');
+        tbody.innerHTML = ''
+    
+        totalDespesas.forEach(d => {
+            for (let i = 0; i < totalDespesas.length; i++) {
+                var linha = tbody.insertRow(i-1)
+            }
+            linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}`
+            linha.insertCell(1).innerHTML = d.tipo
+            linha.insertCell(2).innerHTML = d.desc
+            linha.insertCell(3).innerHTML = d.valor
+        })
+    }    
+
+    filtrarDespesas(){
+        const valoresInput = this.recuperarDespesasDigitadas();
+        const despesaFiltradora = new Despesa(...valoresInput)
+
+        let despesasFiltradas = recuperarTodasDespesas()
+    
+        // console.log(despesaFiltradora)
+
+        // console.log(despesasFiltradas)
+    
+        if(despesaFiltradora.ano != ''){
+            despesasFiltradas = despesasFiltradas.filter(d => d.ano == despesaFiltradora.ano)
+        }
+        if(despesaFiltradora.mes != ''){
+            despesasFiltradas = despesasFiltradas.filter(d => d.mes == despesaFiltradora.mes)
+        }
+        if(despesaFiltradora.dia != ''){
+            despesasFiltradas = despesasFiltradas.filter(d => d.dia == despesaFiltradora.dia)
+        }
+        if(despesaFiltradora.tipo != ''){
+            despesasFiltradas = despesasFiltradas.filter(d => d.tipo == despesaFiltradora.tipo)
+        }
+        if(despesaFiltradora.desc != ''){
+            despesasFiltradas = despesasFiltradas.filter(d => d.desc == despesaFiltradora.desc)
+        }
+        if(despesaFiltradora.valor != ''){
+            despesasFiltradas = despesasFiltradas.filter(d => d.valor == despesaFiltradora.valor)
+        }
+        this.carregarListaDespesas(despesasFiltradas, true)
+    }
+
 }
 
 class Modal {
@@ -90,4 +148,21 @@ const registrarDespesa = (d, nD) => {
     console.log(nD)
     localStorage.setItem(`Despesa${nD}`, JSON.stringify(d));
     console.log(localStorage.getItem(`Despesa${nD}`))
+}
+
+const recuperarTodasDespesas = () =>{
+    const idDespesa = localStorage.getItem('variavelNobj');
+    let despesas = []
+
+    for (let i = 0; i < idDespesa; i++) {
+        const despesa = JSON.parse(localStorage.getItem(`Despesa${i}`))
+
+        if(despesa == null){
+            continue
+        }
+
+        despesas.push(despesa)
+    }
+
+    return despesas
 }
