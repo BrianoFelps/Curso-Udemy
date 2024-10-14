@@ -8,6 +8,25 @@ class Despesa{
         this.valor = valor;
     }
 
+    recuperarTodasDespesas (){
+        const idDespesa = localStorage.getItem('variavelNobj');
+        let despesas = []
+    
+        for (let i = 0; i < idDespesa; i++) {
+            const despesa = JSON.parse(localStorage.getItem(`Despesa${i}`))
+    
+            if(despesa == null){
+                continue
+            }
+    
+            despesas.push(despesa)
+
+            despesa.id = i;
+        }
+    
+        return despesas
+    }
+
     recuperarDespesasDigitadas (){
         let atributos = document.getElementsByClassName("form-control");
         const valoresArray = [];
@@ -57,7 +76,7 @@ class Despesa{
     carregarListaDespesas(totalDespesas = [], filtro = false) {
 
         if(totalDespesas.length == 0 && filtro !== true){
-            totalDespesas = recuperarTodasDespesas()
+            totalDespesas = new Despesa().recuperarTodasDespesas()
         }
     
         const tbody = document.getElementById('lista-despesas');
@@ -71,6 +90,17 @@ class Despesa{
             linha.insertCell(1).innerHTML = d.tipo
             linha.insertCell(2).innerHTML = d.desc
             linha.insertCell(3).innerHTML = d.valor
+
+            const btn = document.createElement("button")
+            btn.className = 'btn btn-danger'
+            btn.id = `excluir_${d.id}`
+            btn.innerHTML= '<span class="font-weight-bold">&times;</span>'
+            linha.insertCell(4).append(btn)
+            btn.onclick = () =>{
+
+                localStorage.removeItem(`Despesa${d.id}`)
+                window.location.reload()
+            }
         })
     }    
 
@@ -78,7 +108,7 @@ class Despesa{
         const valoresInput = this.recuperarDespesasDigitadas();
         const despesaFiltradora = new Despesa(...valoresInput)
 
-        let despesasFiltradas = recuperarTodasDespesas()
+        let despesasFiltradas = new Despesa().recuperarTodasDespesas()
     
         // console.log(despesaFiltradora)
 
@@ -150,19 +180,3 @@ const registrarDespesa = (d, nD) => {
     console.log(localStorage.getItem(`Despesa${nD}`))
 }
 
-const recuperarTodasDespesas = () =>{
-    const idDespesa = localStorage.getItem('variavelNobj');
-    let despesas = []
-
-    for (let i = 0; i < idDespesa; i++) {
-        const despesa = JSON.parse(localStorage.getItem(`Despesa${i}`))
-
-        if(despesa == null){
-            continue
-        }
-
-        despesas.push(despesa)
-    }
-
-    return despesas
-}
