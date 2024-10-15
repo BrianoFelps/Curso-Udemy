@@ -127,10 +127,10 @@ class Despesa{
             despesasFiltradas = despesasFiltradas.filter(d => d.tipo == despesaFiltradora.tipo)
         }
         if(despesaFiltradora.desc != ''){
-            despesasFiltradas = despesasFiltradas.filter(d => d.desc == despesaFiltradora.desc)
+            despesasFiltradas = despesasFiltradas.filter(d => d.desc.toLowerCase().includes(despesaFiltradora.desc.toLowerCase()))
         }
         if(despesaFiltradora.valor != ''){
-            despesasFiltradas = despesasFiltradas.filter(d => d.valor == despesaFiltradora.valor)
+            despesasFiltradas = despesasFiltradas.filter(d => d.valor.toString().startsWith(despesaFiltradora.valor.toString()));
         }
         this.carregarListaDespesas(despesasFiltradas, true)
     }
@@ -155,7 +155,7 @@ class Modal {
             // Verificar se já existem classes definidas anteriormente
             if (header.classList.length > 4) {
                 // Substituir a classe existente no header pela nova
-                header.classList.replace(header.classList.item(4), modal.classeTexto);
+                header.classList.replace(header.classList.item(4), modal.classeTexto );
             } else {
                 // Caso não exista nenhuma classe, apenas adicionar
                 header.classList.add(modal.classeTexto);
@@ -175,8 +175,8 @@ class Modal {
 }
 
 const registrarDespesa = (d, nD) => {
-    console.log(nD)
+    // console.log(nD)
     localStorage.setItem(`Despesa${nD}`, JSON.stringify(d));
-    console.log(localStorage.getItem(`Despesa${nD}`))
+    // console.log(localStorage.getItem(`Despesa${nD}`))
 }
 
