@@ -127,7 +127,11 @@ class Despesa{
             despesasFiltradas = despesasFiltradas.filter(d => d.tipo == despesaFiltradora.tipo)
         }
         if(despesaFiltradora.desc != ''){
-            despesasFiltradas = despesasFiltradas.filter(d => d.desc.toLowerCase().includes(despesaFiltradora.desc.toLowerCase()))
+            const descFiltrada = removerAcentos(despesaFiltradora.desc.toLowerCase());
+            
+            despesasFiltradas = despesasFiltradas.filter(d => 
+                removerAcentos(d.desc.toLowerCase()).includes(descFiltrada)
+            );
         }
         if(despesaFiltradora.valor != ''){
             despesasFiltradas = despesasFiltradas.filter(d => d.valor.toString().startsWith(despesaFiltradora.valor.toString()));
@@ -180,3 +184,6 @@ const registrarDespesa = (d, nD) => {
     // console.log(localStorage.getItem(`Despesa${nD}`))
 }
 
+function removerAcentos(texto) {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
